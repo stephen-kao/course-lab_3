@@ -1,0 +1,152 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Oct 15 10:17:03 2023
+# Process ID: 3248
+# Current directory: /home/ubuntu/course-lab_3
+# Command line: vivado
+# Log file: /home/ubuntu/course-lab_3/vivado.log
+# Journal file: /home/ubuntu/course-lab_3/vivado.jou
+# Running On: ubuntu2004, OS: Linux, CPU Frequency: 2496.002 MHz, CPU Physical cores: 2, Host memory: 16766 MB
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/ubuntu/course-lab_3/project_1 -part xc7z020clg400-1
+add_files -norecurse {/home/ubuntu/course-lab_3/fir/rtl/fir.v /home/ubuntu/course-lab_3/fir/rtl/input_buffer.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/ubuntu/course-lab_3/fir/tb/fir_tb.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse /home/ubuntu/course-lab_3/bram/bram11.v
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source fir_tb.tcl
+add_bp {/home/ubuntu/course-lab_3/fir/tb/fir_tb.v} 181
+close_sim
+launch_simulation
+source fir_tb.tcl
+remove_bps -file {/home/ubuntu/course-lab_3/fir/tb/fir_tb.v} -line 181
+close_sim
+launch_simulation
+source fir_tb.tcl
+set_property loop_count 100000 [current_fileset]
+close_sim
+launch_simulation
+source fir_tb.tcl
+set_property loop_count 1000 [current_fileset]
+set_property -name {xsim.simulate.runtime} -value {100000ns} -objects [get_filesets sim_1]
+close_sim
+launch_simulation
+source fir_tb.tcl
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+create_clock -period 10.000 -name clk -waveform {0.000 5.000}
+report_clock_networks -name {network_1}
+create_clock -period 10.000 -name clk -waveform {0.000 5.000}
+file mkdir /home/ubuntu/course-lab_3/project_1/project_1.srcs/constrs_1/new
+close [ open /home/ubuntu/course-lab_3/project_1/project_1.srcs/constrs_1/new/fir.xdc w ]
+add_files -fileset constrs_1 /home/ubuntu/course-lab_3/project_1/project_1.srcs/constrs_1/new/fir.xdc
+set_property target_constrs_file /home/ubuntu/course-lab_3/project_1/project_1.srcs/constrs_1/new/fir.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_clock_networks -name {network_1}
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+set_input_delay -clock axis_clk 5.0 [get_ports [list araddr[0] araddr[1] araddr[2] araddr[3] araddr[4] araddr[5] araddr[6] araddr[7] araddr[8] araddr[9] araddr[10] araddr[11] arvalid awaddr[0] awaddr[1] awaddr[2] awaddr[3] awaddr[4] awaddr[5] awaddr[6] awaddr[7] awaddr[8] awaddr[9] awaddr[10] awaddr[11] awvalid axis_rst_n data_Do[0] data_Do[1] data_Do[2] data_Do[3] data_Do[4] data_Do[5] data_Do[6] data_Do[7] data_Do[8] data_Do[9] data_Do[10] data_Do[11] data_Do[12] data_Do[13] data_Do[14] data_Do[15] data_Do[16] data_Do[17] data_Do[18] data_Do[19] data_Do[20] data_Do[21] data_Do[22] data_Do[23] data_Do[24] data_Do[25] data_Do[26] data_Do[27] data_Do[28] data_Do[29] data_Do[30] data_Do[31] rready sm_tready ss_tdata[0] ss_tdata[1] ss_tdata[2] ss_tdata[3] ss_tdata[4] ss_tdata[5] ss_tdata[6] ss_tdata[7] ss_tdata[8] ss_tdata[9] ss_tdata[10] ss_tdata[11] ss_tdata[12] ss_tdata[13] ss_tdata[14] ss_tdata[15] ss_tdata[16] ss_tdata[17] ss_tdata[18] ss_tdata[19] ss_tdata[20] ss_tdata[21] ss_tdata[22] ss_tdata[23] ss_tdata[24] ss_tdata[25] ss_tdata[26] ss_tdata[27] ss_tdata[28] ss_tdata[29] ss_tdata[30] ss_tdata[31] ss_tlast ss_tvalid tap_Do[0] tap_Do[1] tap_Do[2] tap_Do[3] tap_Do[4] tap_Do[5] tap_Do[6] tap_Do[7] tap_Do[8] tap_Do[9] tap_Do[10] tap_Do[11] tap_Do[12] tap_Do[13] tap_Do[14] tap_Do[15] tap_Do[16] tap_Do[17] tap_Do[18] tap_Do[19] tap_Do[20] tap_Do[21] tap_Do[22] tap_Do[23] tap_Do[24] tap_Do[25] tap_Do[26] tap_Do[27] tap_Do[28] tap_Do[29] tap_Do[30] tap_Do[31] wdata[0] wdata[1] wdata[2] wdata[3] wdata[4] wdata[5] wdata[6] wdata[7] wdata[8] wdata[9] wdata[10] wdata[11] wdata[12] wdata[13] wdata[14] wdata[15] wdata[16] wdata[17] wdata[18] wdata[19] wdata[20] wdata[21] wdata[22] wdata[23] wdata[24] wdata[25] wdata[26] wdata[27] wdata[28] wdata[29] wdata[30] wdata[31] wvalid ]]
+set_output_delay -clock axis_clk 5.0 [get_ports -filter { NAME =~  "*" && DIRECTION == "OUT" }]
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+check_timing -verbose -name timing_1
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+save_constraints -force
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+check_timing -verbose -name timing_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+set_output_delay -clock [get_clocks  "*"] 5.0 [get_ports -filter { NAME =~  "*" && DIRECTION == "OUT" }]
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+check_timing -verbose -name timing_1
+refresh_design
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+refresh_design
+save_constraints
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+check_timing -verbose -name timing_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+save_constraints -force
+close_design
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/project_1.runs/synth_1/timing_report.txt
+close_sim

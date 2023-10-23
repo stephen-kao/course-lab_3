@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Sun Oct 22 23:30:45 2023
+# Process ID: 2060
+# Current directory: /home/ubuntu/course-lab_3
+# Command line: vivado
+# Log file: /home/ubuntu/course-lab_3/vivado.log
+# Journal file: /home/ubuntu/course-lab_3/vivado.jou
+# Running On: ubuntu2004, OS: Linux, CPU Frequency: 2496.002 MHz, CPU Physical cores: 2, Host memory: 16766 MB
+#-----------------------------------------------------------
+start_gui
+open_project /home/ubuntu/course-lab_3/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source fir_tb.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/timing_report.txt
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/timing_report.txt
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/timing_report.txt
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 -file /home/ubuntu/course-lab_3/project_1/timing_report.txt
+close_sim
+save_constraints
+launch_simulation
+source fir_tb.tcl
+close_sim
+launch_simulation
+source fir_tb.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+close_sim
+launch_simulation
+source fir_tb.tcl
+close_sim
+launch_simulation
+source fir_tb.tcl
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1(1) -file /home/ubuntu/course-lab_3/project_1/timing_report.txt
+refresh_design
+check_timing -verbose -name timing_1

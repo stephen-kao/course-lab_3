@@ -1,0 +1,9 @@
+0.7
+2020.2
+Apr 18 2022
+15:53:03
+/home/ubuntu/course-lab_3/bram/bram11.v,1697380051,verilog,,/home/ubuntu/course-lab_3/fir/rtl/fir.v,,bram11,,,,,,,,
+/home/ubuntu/course-lab_3/fir/rtl/fir.v,1697380839,verilog,,/home/ubuntu/course-lab_3/fir/rtl/input_buffer.v,,fir,,,,,,,,
+/home/ubuntu/course-lab_3/fir/rtl/input_buffer.v,1697368128,verilog,,/home/ubuntu/course-lab_3/fir/tb/fir_tb.v,,input_buffer,,,,,,,,
+/home/ubuntu/course-lab_3/fir/tb/fir_tb.v,1697381030,verilog,,,/home/ubuntu/course-lab_3/bram/bram11.v,fir_tb,,,,,,,,
+/home/ubuntu/course-lab_3/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1649976174,verilog,,,,glbl,,,,,,,,
