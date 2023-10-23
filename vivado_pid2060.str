@@ -2556,3 +2556,4 @@ selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints,
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, fir.xdc]", 3, false, false, false, false, false, true); // D - Double Click
 dismissDialog("Opening Editor"); // bA
 // HMemoryUtils.trashcanNow. Engine heap size: 2,658 MB. GUI used memory: 149 MB. Current time: 10/23/23, 10:21:57 AM EDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,658 MB. GUI used memory: 148 MB. Current time: 10/23/23, 10:51:57 AM EDT
